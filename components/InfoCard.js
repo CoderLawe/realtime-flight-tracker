@@ -1,8 +1,10 @@
+import Image from "next/image";
 import React, { useContext, useEffect } from "react";
-import { FlightContext } from "./context/FlightContext";
+import { FlightContext, ImageContext } from "./context/FlightContext";
 
 function InfoCard() {
   const [flightData, setFlightData] = useContext(FlightContext);
+  const [url, setUrl] = useContext(ImageContext);
 
   useEffect(() => {
     console.log("Current flight data is", flightData);
@@ -17,6 +19,10 @@ function InfoCard() {
           {/* Right side */}
 
           {/* <AiCloseIcon */}
+        </div>
+
+        <div className="h-[250px] w-full absolute">
+          <img src={url} className="h-[250px] w-full object-cover" />
         </div>
       </div>
     </div>

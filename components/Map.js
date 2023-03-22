@@ -31,9 +31,13 @@ function Map({ data }) {
     setFlightData({ ...flight });
     console.log("staged", flight);
   };
+
+  useEffect(() => {
+    console.log("viewport", viewPort);
+  }, [viewPort]);
   return (
     <ReactMapGl
-      className="w-[100%] h-[100%] z-0 absolute mt-[200px]"
+      className="w-[100%] h-[100%] z-0 absolute "
       mapStyle="mapbox://styles/coderlawe/cks0lilc80own17mv51dv90go"
       mapboxAccessToken="pk.eyJ1IjoiY29kZXJsYXdlIiwiYSI6ImNrcGZvbGE1ajBkd2QydnFvY2tndGs2cjYifQ.hx9O2OuDutDwo1AbZUREqg"
       //   mapboxApiAccessToken="pk.eyJ1IjoiY29kZXJsYXdlIiwiYSI6ImNrcGZvbGE1ajBkd2QydnFvY2tndGs2cjYifQ.hx9O2OuDutDwo1AbZUREqg"
